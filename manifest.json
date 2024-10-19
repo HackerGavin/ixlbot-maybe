@@ -2,17 +2,8 @@
   "manifest_version": 3,
   "name": "AI Answer Finder",
   "version": "1.0",
-  "description": "Scan questions on a page and determine the correct answer using AI.",
+  "description": "Scan questions on a page and provide answers using predefined rules.",
   "permissions": ["activeTab", "scripting"],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
