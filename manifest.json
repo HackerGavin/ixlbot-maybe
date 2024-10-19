@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "AI Answer Finder",
+  "name": "Answer Finder",
   "version": "1.0",
   "description": "Scan questions on a page and provide answers using predefined rules.",
   "permissions": ["activeTab", "scripting"],
