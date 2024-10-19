@@ -1,7 +1,6 @@
 // content.js
 function extractQuestion() {
-    // You can customize this selector based on the webpage structure
-    const questionElements = document.querySelectorAll('p'); // Adjust as necessary
+    const questionElements = document.querySelectorAll('p'); // Adjust based on the structure of the webpage
     return Array.from(questionElements).map(el => el.innerText).join('\n');
 }
 
