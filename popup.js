@@ -1,4 +1,3 @@
-// popup.js
 const predefinedAnswers = {
     "What is the capital of France?": "The capital of France is Paris.",
     "What is 2 + 2?": "2 + 2 equals 4.",
