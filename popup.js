@@ -10,10 +10,26 @@ document.getElementById('scan').addEventListener('click', () => {
     });
 });
 
-function determineAnswer(question) {
-    // Placeholder for AI processing logic
-    // Here you can use an AI API to get the answer
+async function determineAnswer(question) {
     document.getElementById('output').innerText = "Extracted Question:\n" + question;
-    // For demonstration, just return a static answer
-    document.getElementById('output').innerText += "\n\nPredicted Answer: This is a placeholder answer.";
+
+    try {
+        const res = await fetch('http://localhost:3000/api/get-answer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ question }),
+        });
+
+        const data = await res.json();
+        if (data.answer) {
+            document.getElementById('output').innerText += "\n\nPredicted Answer: " + data.answer;
+        } else {
+            document.getElementById('output').innerText += "\n\nError fetching answer.";
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('output').innerText += "\n\nError calling API.";
+    }
 }
